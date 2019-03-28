@@ -10,14 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var numInput: UITextField!
+    @IBOutlet weak var guessOutput: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     //this creates a random integer "uniformly"* minus one from the number you input
-    let diceRoll = arc4random_uniform(6)
+    
 
-
+    @IBOutlet var guessNumber: UIView!
+    
+    @IBAction func guessMyNum(_ sender: Any) {
+        let diceRoll = String(arc4random_uniform(6))
+        if numInput.text == diceRoll {
+            guessOutput.text = "What are you psychic or something?"
+        } else{
+            guessOutput.text = "Guess again idiot!"
+        }
+    }
 }
 
