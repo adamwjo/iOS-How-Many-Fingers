@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    //this creates a random integer "uniformly"* minus one from the number you input
+    let diceRoll = arc4random_uniform(6)
 
 
 }
